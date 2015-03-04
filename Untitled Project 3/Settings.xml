@@ -1,0 +1,89 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>13.0f2</Version>
+<Cluster>
+<Name>Settings in</Name>
+<NumElts>4</NumElts>
+<Cluster>
+<Name>Hardware Configuration</Name>
+<NumElts>3</NumElts>
+<Refnum>
+<Name>DAQmx Task</Name>
+<RefKind>Generic Tag</RefKind>
+<RefType>NIDAQ</RefType>
+<Val></Val>
+</Refnum>
+<DAQChannel>
+<Name>Counter(s)</Name>
+<Val>Dev2/ctr0</Val>
+</DAQChannel>
+<I32>
+<Name>samples per readout</Name>
+<Val>100</Val>
+</I32>
+</Cluster>
+<Cluster>
+<Name>Logging Configuration</Name>
+<NumElts>5</NumElts>
+<Path>
+<Name>Log File Base Path</Name>
+<Val>C:\Users\admin\Desktop\25feb2015\secondtry\bead1_again.tdms</Val>
+</Path>
+<U32>
+<Name>Max Samples</Name>
+<Val>1000000</Val>
+</U32>
+<Refnum>
+<Name>File Refnum</Name>
+<RefKind>Byte Stream File</RefKind>
+<Val>0x00000000</Val>
+</Refnum>
+<Boolean>
+<Name>Log Piezo</Name>
+<Val>1</Val>
+</Boolean>
+<Refnum>
+<Name>Piezo File Refnum</Name>
+<RefKind>Byte Stream File</RefKind>
+<Val>0x00000000</Val>
+</Refnum>
+</Cluster>
+<Cluster>
+<Name>Piezo Config</Name>
+<NumElts>3</NumElts>
+<I32>
+<Name>Piezo Serial Number</Name>
+<Val>0</Val>
+</I32>
+<Refnum>
+<Name>MG17Piezo</Name>
+<RefKind>ActiveX</RefKind>
+<ActiveXType>
+<GUID>{6CEFEF2F-E17F-4E3C-BD39-7C3745151800}</GUID>
+<Name>MG17PiezoLib.MG17Piezo</Name>
+</ActiveXType>
+<Val>0x00000000</Val>
+</Refnum>
+<SGL>
+<Name>Setpoint (um)</Name>
+<Val>0.00000</Val>
+</SGL>
+</Cluster>
+<Cluster>
+<Name>Capacitive Config</Name>
+<NumElts>3</NumElts>
+<String>
+<Name>IP Address</Name>
+<Val>Simulator</Val>
+</String>
+<U32>
+<Name>Handle</Name>
+<Val>0</Val>
+</U32>
+<DBL>
+<Name>Refresh Time (ms)</Name>
+<Val>100.00000000000000</Val>
+</DBL>
+</Cluster>
+</Cluster>
+</LVData>
