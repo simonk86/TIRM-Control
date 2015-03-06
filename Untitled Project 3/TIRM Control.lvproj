@@ -40,8 +40,8 @@
 		<Item Name="Feedback.lvlib" Type="Library" URL="../Feedback/Feedback.lvlib"/>
 		<Item Name="Piezo.lvlib" Type="Library" URL="../Piezo/Piezo.lvlib"/>
 		<Item Name="XY.lvlib" Type="Library" URL="../XY/XY.lvlib"/>
-		<Item Name="Settings.xml" Type="Document" URL="../Settings.xml"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
+		<Item Name="Test Analog Input.vi" Type="VI" URL="../Test Analog Input.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Write to XML File(array).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File(array).vi"/>
@@ -305,7 +305,7 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Settings.xml</Property>
+				<Property Name="Source[2].itemID" Type="Ref"></Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="SourceCount" Type="Int">3</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">Continuous Measurement and Logging (NI-DAQmx)</Property>

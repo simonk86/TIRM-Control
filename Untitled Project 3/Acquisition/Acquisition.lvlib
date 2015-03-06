@@ -11,6 +11,8 @@
 	<Item Name="support" Type="Folder">
 		<Item Name="Acquisition State.ctl" Type="VI" URL="../Acquisition State.ctl"/>
 		<Item Name="APD Notifier Cluster.ctl" Type="VI" URL="../APD Notifier Cluster.ctl"/>
+		<Item Name="ADC Configuration.ctl" Type="VI" URL="../../ADC/ADC Configuration.ctl"/>
+		<Item Name="Counter Configuration.ctl" Type="VI" URL="../Counter Configuration.ctl"/>
 		<Item Name="Hardware Configuration.ctl" Type="VI" URL="../Hardware Configuration.ctl"/>
 	</Item>
 	<Item Name="Acquisition Message Loop.vi" Type="VI" URL="../Acquisition Message Loop.vi"/>

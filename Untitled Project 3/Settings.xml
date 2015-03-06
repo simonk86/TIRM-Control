@@ -75,28 +75,6 @@
 <Val>0</Val>
 </U16>
 <Cluster>
-<Name>ADC Configuration</Name>
-<NumElts>4</NumElts>
-<Refnum>
-<Name>DAQmx Task</Name>
-<RefKind>Generic Tag</RefKind>
-<RefType>NIDAQ</RefType>
-<Val>Dev2/ctr0</Val>
-</Refnum>
-<DAQChannel>
-<Name>Channel(s)</Name>
-<Val>Dev2/ctr3</Val>
-</DAQChannel>
-<I32>
-<Name>samples per readout</Name>
-<Val>100</Val>
-</I32>
-<I32>
-<Name>Sample Rate (s/s)</Name>
-<Val>0</Val>
-</I32>
-</Cluster>
-<Cluster>
 <Name>Counter Configuration</Name>
 <NumElts>3</NumElts>
 <Refnum>
@@ -113,6 +91,36 @@
 <Name>samples per readout</Name>
 <Val>100</Val>
 </I32>
+</Cluster>
+<Cluster>
+<Name>ADC Configuration</Name>
+<NumElts>6</NumElts>
+<Refnum>
+<Name>DAQmx Task</Name>
+<RefKind>Generic Tag</RefKind>
+<RefType>NIDAQ</RefType>
+<Val>Dev2/ctr0</Val>
+</Refnum>
+<DAQChannel>
+<Name>Channel(s)</Name>
+<Val>Dev3/ai3,Dev3/ai1</Val>
+</DAQChannel>
+<I32>
+<Name>samples per readout</Name>
+<Val>100</Val>
+</I32>
+<I32>
+<Name>Sample Rate (s/s)</Name>
+<Val>1000</Val>
+</I32>
+<DBL>
+<Name>Max Voltage</Name>
+<Val>5.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Min Voltage</Name>
+<Val>-5.00000000000000</Val>
+</DBL>
 </Cluster>
 </Cluster>
 </Cluster>
