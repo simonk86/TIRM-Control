@@ -72,7 +72,7 @@
 <NumElts>3</NumElts>
 <U16>
 <Name>Data Source</Name>
-<Val>0</Val>
+<Val>1</Val>
 </U16>
 <Cluster>
 <Name>Counter Configuration</Name>
