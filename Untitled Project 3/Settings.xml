@@ -103,7 +103,7 @@
 </Refnum>
 <DAQChannel>
 <Name>Channel(s)</Name>
-<Val>Dev3/ai3,Dev3/ai1</Val>
+<Val>Dev3/ai1,Dev3/ai3</Val>
 </DAQChannel>
 <I32>
 <Name>samples per readout</Name>
@@ -115,11 +115,11 @@
 </I32>
 <DBL>
 <Name>Max Voltage</Name>
-<Val>5.00000000000000</Val>
+<Val>10.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>Min Voltage</Name>
-<Val>-5.00000000000000</Val>
+<Val>-10.00000000000000</Val>
 </DBL>
 </Cluster>
 </Cluster>
