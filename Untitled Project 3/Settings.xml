@@ -84,8 +84,8 @@
 <Val>Dev2/ctr0</Val>
 </Refnum>
 <DAQChannel>
-<Name>Counter(s)</Name>
-<Val></Val>
+<Name>Channel(s)</Name>
+<Val>Dev2/ctr3</Val>
 </DAQChannel>
 <I32>
 <Name>samples per readout</Name>
