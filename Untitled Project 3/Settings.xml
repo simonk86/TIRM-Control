@@ -5,29 +5,11 @@
 <Name>Settings in</Name>
 <NumElts>4</NumElts>
 <Cluster>
-<Name>Hardware Configuration</Name>
-<NumElts>3</NumElts>
-<Refnum>
-<Name>DAQmx Task</Name>
-<RefKind>Generic Tag</RefKind>
-<RefType>NIDAQ</RefType>
-<Val></Val>
-</Refnum>
-<DAQChannel>
-<Name>Counter(s)</Name>
-<Val>Dev2/ctr0</Val>
-</DAQChannel>
-<I32>
-<Name>samples per readout</Name>
-<Val>100</Val>
-</I32>
-</Cluster>
-<Cluster>
 <Name>Logging Configuration</Name>
 <NumElts>5</NumElts>
 <Path>
 <Name>Log File Base Path</Name>
-<Val>C:\Users\admin\Desktop\25feb2015\secondtry\bead1_again.tdms</Val>
+<Val>C:\Users\admin\Documents\LabVIEW Data\Logged Data.dat</Val>
 </Path>
 <U32>
 <Name>Max Samples</Name>
@@ -84,6 +66,54 @@
 <Name>Refresh Time (ms)</Name>
 <Val>100.00000000000000</Val>
 </DBL>
+</Cluster>
+<Cluster>
+<Name>Hardware Config</Name>
+<NumElts>3</NumElts>
+<U16>
+<Name>Data Source</Name>
+<Val>0</Val>
+</U16>
+<Cluster>
+<Name>ADC Configuration</Name>
+<NumElts>4</NumElts>
+<Refnum>
+<Name>DAQmx Task</Name>
+<RefKind>Generic Tag</RefKind>
+<RefType>NIDAQ</RefType>
+<Val>Dev2/ctr0</Val>
+</Refnum>
+<DAQChannel>
+<Name>Counter(s)</Name>
+<Val></Val>
+</DAQChannel>
+<I32>
+<Name>samples per readout</Name>
+<Val>100</Val>
+</I32>
+<I32>
+<Name>Sample Rate (s/s)</Name>
+<Val>0</Val>
+</I32>
+</Cluster>
+<Cluster>
+<Name>Counter Configuration</Name>
+<NumElts>3</NumElts>
+<Refnum>
+<Name>DAQmx Task</Name>
+<RefKind>Generic Tag</RefKind>
+<RefType>NIDAQ</RefType>
+<Val></Val>
+</Refnum>
+<DAQChannel>
+<Name>Counter(s)</Name>
+<Val>Dev2/ctr0</Val>
+</DAQChannel>
+<I32>
+<Name>samples per readout</Name>
+<Val>100</Val>
+</I32>
+</Cluster>
 </Cluster>
 </Cluster>
 </LVData>
