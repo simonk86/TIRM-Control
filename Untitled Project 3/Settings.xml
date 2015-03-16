@@ -31,7 +31,7 @@
 </Refnum>
 <Boolean>
 <Name>Log Capacitive</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Refnum>
 <Name>Cap File Refnum</Name>
