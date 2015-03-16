@@ -6,7 +6,7 @@
 <NumElts>4</NumElts>
 <Cluster>
 <Name>Logging Configuration</Name>
-<NumElts>5</NumElts>
+<NumElts>7</NumElts>
 <Path>
 <Name>Log File Base Path</Name>
 <Val>C:\Users\admin\Documents\LabVIEW Data\Logged Data.dat</Val>
@@ -26,6 +26,15 @@
 </Boolean>
 <Refnum>
 <Name>Piezo File Refnum</Name>
+<RefKind>Byte Stream File</RefKind>
+<Val>0x00000000</Val>
+</Refnum>
+<Boolean>
+<Name>Log Capacitive</Name>
+<Val>0</Val>
+</Boolean>
+<Refnum>
+<Name>Cap File Refnum</Name>
 <RefKind>Byte Stream File</RefKind>
 <Val>0x00000000</Val>
 </Refnum>
@@ -81,11 +90,11 @@
 <Name>DAQmx Task</Name>
 <RefKind>Generic Tag</RefKind>
 <RefType>NIDAQ</RefType>
-<Val></Val>
+<Val>Dev2/ctr0</Val>
 </Refnum>
 <DAQChannel>
 <Name>Counter(s)</Name>
-<Val>Dev2/ctr0</Val>
+<Val></Val>
 </DAQChannel>
 <I32>
 <Name>samples per readout</Name>
@@ -99,11 +108,11 @@
 <Name>DAQmx Task</Name>
 <RefKind>Generic Tag</RefKind>
 <RefType>NIDAQ</RefType>
-<Val>Dev2/ctr0</Val>
+<Val></Val>
 </Refnum>
 <DAQChannel>
 <Name>Channel(s)</Name>
-<Val>Dev3/ai1,Dev3/ai3</Val>
+<Val>Dev3/ai0, Dev3/ai3</Val>
 </DAQChannel>
 <I32>
 <Name>samples per readout</Name>
@@ -115,11 +124,11 @@
 </I32>
 <DBL>
 <Name>Max Voltage</Name>
-<Val>10.00000000000000</Val>
+<Val>5.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>Min Voltage</Name>
-<Val>-10.00000000000000</Val>
+<Val>-5.00000000000000</Val>
 </DBL>
 </Cluster>
 </Cluster>
