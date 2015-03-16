@@ -56,7 +56,7 @@
 <NumElts>3</NumElts>
 <String>
 <Name>IP Address</Name>
-<Val>Simulator</Val>
+<Val>USB0</Val>
 </String>
 <U32>
 <Name>Handle</Name>
