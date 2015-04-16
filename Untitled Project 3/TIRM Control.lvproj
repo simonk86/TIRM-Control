@@ -240,7 +240,6 @@
 				<Item Name="DAQmx Create Channel (AI-Voltage-Custom with Excitation).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/channels.llb/DAQmx Create Channel (AI-Voltage-Custom with Excitation).vi"/>
 				<Item Name="DAQmx Create Virtual Channel.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/channels.llb/DAQmx Create Virtual Channel.vi"/>
 				<Item Name="DAQmx Create Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/task.llb/DAQmx Create Task.vi"/>
-				<Item Name="Get File Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get File Extension.vi"/>
 				<Item Name="NI_PtbyPt.lvlib" Type="Library" URL="/&lt;vilib&gt;/ptbypt/NI_PtbyPt.lvlib"/>
 				<Item Name="NI_MABase.lvlib" Type="Library" URL="/&lt;vilib&gt;/measure/NI_MABase.lvlib"/>
 				<Item Name="Check for Equality.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/Check for Equality.vi"/>
@@ -261,6 +260,8 @@
 				<Item Name="WDT Index Channel CDB.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel CDB.vi"/>
 				<Item Name="WDT Index Channel by Name CDB.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel by Name CDB.vi"/>
 				<Item Name="Index Waveform Array.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/Index Waveform Array.vi"/>
+				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
+				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
@@ -275,6 +276,9 @@
 			<Item Name="ConnectToCommandChannel(SubVI).vi" Type="VI" URL="../../../../../../../../DigitalAccumeasure/SoftwareDevelopment/Labview/VI/ConnectToCommandChannel(SubVI).vi"/>
 			<Item Name="Disconnect(SubVI).vi" Type="VI" URL="../../../../../../../../DigitalAccumeasure/SoftwareDevelopment/Labview/VI/Disconnect(SubVI).vi"/>
 			<Item Name="CloseAccumeasureInterface(SubVI).vi" Type="VI" URL="../../../../../../../../DigitalAccumeasure/SoftwareDevelopment/Labview/VI/CloseAccumeasureInterface(SubVI).vi"/>
+			<Item Name="SetChannelFilter(SubVI).vi" Type="VI" URL="../../../../../../../../DigitalAccumeasure/SoftwareDevelopment/Labview/VI/SetChannelFilter(SubVI).vi"/>
+			<Item Name="SetDataRate(SubVI).vi" Type="VI" URL="../../../../../../../../DigitalAccumeasure/SoftwareDevelopment/Labview/VI/SetDataRate(SubVI).vi"/>
+			<Item Name="GetControllerTemperature(SubVI).vi" Type="VI" URL="../../../../../../../../DigitalAccumeasure/SoftwareDevelopment/Labview/VI/GetControllerTemperature(SubVI).vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="Continuous Measurement and Logging (NI-DAQmx)" Type="EXE">
