@@ -73,7 +73,7 @@
 </U32>
 <DBL>
 <Name>Refresh Time (ms)</Name>
-<Val>100.00000000000000</Val>
+<Val>50.00000000000000</Val>
 </DBL>
 </Cluster>
 <Cluster>
@@ -94,11 +94,11 @@
 </Refnum>
 <DAQChannel>
 <Name>Counter(s)</Name>
-<Val></Val>
+<Val>Dev2/ctr0</Val>
 </DAQChannel>
 <I32>
 <Name>samples per readout</Name>
-<Val>100</Val>
+<Val>1000</Val>
 </I32>
 </Cluster>
 <Cluster>
@@ -124,11 +124,11 @@
 </I32>
 <DBL>
 <Name>Max Voltage</Name>
-<Val>5.00000000000000</Val>
+<Val>10.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>Min Voltage</Name>
-<Val>-5.00000000000000</Val>
+<Val>-10.00000000000000</Val>
 </DBL>
 </Cluster>
 </Cluster>
