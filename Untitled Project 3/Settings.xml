@@ -13,7 +13,7 @@
 </Path>
 <U32>
 <Name>Max Samples</Name>
-<Val>1000000</Val>
+<Val>600000</Val>
 </U32>
 <Refnum>
 <Name>File Refnum</Name>
@@ -31,7 +31,7 @@
 </Refnum>
 <Boolean>
 <Name>Log Capacitive</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Refnum>
 <Name>Cap File Refnum</Name>
@@ -120,7 +120,7 @@
 </Refnum>
 <DAQChannel>
 <Name>Channel(s)</Name>
-<Val>Dev3/ai0, Dev3/ai3</Val>
+<Val>Dev3/ai0, Dev3/ai2, Dev3/ai3</Val>
 </DAQChannel>
 <I32>
 <Name>samples per readout</Name>
@@ -132,11 +132,11 @@
 </I32>
 <DBL>
 <Name>Max Voltage</Name>
-<Val>5.00000000000000</Val>
+<Val>10.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>Min Voltage</Name>
-<Val>-5.00000000000000</Val>
+<Val>-10.00000000000000</Val>
 </DBL>
 </Cluster>
 </Cluster>

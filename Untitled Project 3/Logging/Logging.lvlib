@@ -14,6 +14,7 @@
 	<Item Name="Check Trigger Conditions.vi" Type="VI" URL="../Check Trigger Conditions.vi"/>
 	<Item Name="Error Handler - Logging Message Loop.vi" Type="VI" URL="../Error Handler - Logging Message Loop.vi"/>
 	<Item Name="Flush Data to Log File.vi" Type="VI" URL="../Flush Data to Log File.vi"/>
+	<Item Name="Generate Save Path.vi" Type="VI" URL="../Generate Save Path.vi"/>
 	<Item Name="Initialize Logging.vi" Type="VI" URL="../Initialize Logging.vi"/>
 	<Item Name="Log Data.vi" Type="VI" URL="../Log Data.vi"/>
 	<Item Name="Logging Message Loop.vi" Type="VI" URL="../Logging Message Loop.vi"/>
