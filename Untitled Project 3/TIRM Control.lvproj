@@ -42,6 +42,7 @@
 		<Item Name="XY.lvlib" Type="Library" URL="../XY/XY.lvlib"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Test Analog Input.vi" Type="VI" URL="../Test Analog Input.vi"/>
+		<Item Name="Automation.lvlib" Type="Library" URL="../Automation/Automation.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Write to XML File(array).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File(array).vi"/>
