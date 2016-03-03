@@ -13,7 +13,7 @@
 </Path>
 <U32>
 <Name>Max Samples</Name>
-<Val>420000</Val>
+<Val>1000000</Val>
 </U32>
 <Refnum>
 <Name>File Refnum</Name>
@@ -120,7 +120,7 @@
 </Refnum>
 <DAQChannel>
 <Name>Channel(s)</Name>
-<Val>Dev4/ai0, Dev4/ai2, Dev4/ai3, Dev4/ai1</Val>
+<Val>Dev4/ai0,Dev4/ai2,Dev4/ai1,Dev4/ai3</Val>
 </DAQChannel>
 <I32>
 <Name>samples per readout</Name>
