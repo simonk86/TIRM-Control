@@ -5,6 +5,7 @@
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Item Name="support" Type="Folder">
+		<Item Name="Error Signal.ctl" Type="VI" URL="../Error Signal.ctl"/>
 		<Item Name="Feedback Parameters.ctl" Type="VI" URL="../Feedback Parameters.ctl"/>
 		<Item Name="Feedback State.ctl" Type="VI" URL="../Feedback State.ctl"/>
 		<Item Name="Scan Parameters.ctl" Type="VI" URL="../Scan Parameters.ctl"/>

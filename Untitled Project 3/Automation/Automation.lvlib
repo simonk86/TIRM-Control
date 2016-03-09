@@ -4,5 +4,8 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">318799872</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
+	<Item Name="support" Type="Folder">
+		<Item Name="Automation State.ctl" Type="VI" URL="../Automation State.ctl"/>
+	</Item>
 	<Item Name="Automation Message Loop.vi" Type="VI" URL="../Automation Message Loop.vi"/>
 </Library>

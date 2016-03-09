@@ -9,11 +9,11 @@
 <NumElts>9</NumElts>
 <Path>
 <Name>Log File Base Path</Name>
-<Val>C:\Users\admin\Documents\TIRM DATA</Val>
+<Val>C:\Users\admin\Documents\LabVIEW Data\Logged Data.dat</Val>
 </Path>
 <U32>
 <Name>Max Samples</Name>
-<Val>100000</Val>
+<Val>1000000</Val>
 </U32>
 <Refnum>
 <Name>File Refnum</Name>
@@ -89,7 +89,7 @@
 <NumElts>3</NumElts>
 <U16>
 <Name>Data Source</Name>
-<Val>1</Val>
+<Val>0</Val>
 </U16>
 <Cluster>
 <Name>Counter Configuration</Name>
@@ -120,23 +120,23 @@
 </Refnum>
 <DAQChannel>
 <Name>Channel(s)</Name>
-<Val>Dev4/ai0,Dev4/ai2,Dev4/ai1,Dev4/ai3</Val>
+<Val>Dev3/ai0, Dev3/ai3</Val>
 </DAQChannel>
 <I32>
 <Name>samples per readout</Name>
-<Val>100</Val>
+<Val>0</Val>
 </I32>
 <I32>
 <Name>Sample Rate (s/s)</Name>
-<Val>1000</Val>
+<Val>0</Val>
 </I32>
 <DBL>
 <Name>Max Voltage</Name>
-<Val>10.00000000000000</Val>
+<Val>5.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>Min Voltage</Name>
-<Val>-10.00000000000000</Val>
+<Val>-5.00000000000000</Val>
 </DBL>
 </Cluster>
 </Cluster>
