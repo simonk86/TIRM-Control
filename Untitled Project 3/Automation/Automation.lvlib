@@ -6,6 +6,11 @@
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Item Name="support" Type="Folder">
 		<Item Name="Automation State.ctl" Type="VI" URL="../Automation State.ctl"/>
+		<Item Name="Zscan Settings.ctl" Type="VI" URL="../Zscan Settings.ctl"/>
 	</Item>
 	<Item Name="Automation Message Loop.vi" Type="VI" URL="../Automation Message Loop.vi"/>
+	<Item Name="Automation Settings Dialog.vi" Type="VI" URL="../Automation Settings Dialog.vi"/>
+	<Item Name="Check Feedback Status.vi" Type="VI" URL="../Check Feedback Status.vi"/>
+	<Item Name="Continue Z Scan.vi" Type="VI" URL="../Continue Z Scan.vi"/>
+	<Item Name="Generate Next File Name.vi" Type="VI" URL="../Generate Next File Name.vi"/>
 </Library>
