@@ -124,11 +124,11 @@
 </DAQChannel>
 <I32>
 <Name>samples per readout</Name>
-<Val>100</Val>
+<Val>200</Val>
 </I32>
 <I32>
 <Name>Sample Rate (s/s)</Name>
-<Val>1000</Val>
+<Val>4000</Val>
 </I32>
 <DBL>
 <Name>Max Voltage</Name>
