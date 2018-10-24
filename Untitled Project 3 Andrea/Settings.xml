@@ -1,0 +1,144 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>13.0f2</Version>
+<Cluster>
+<Name>Settings in</Name>
+<NumElts>4</NumElts>
+<Cluster>
+<Name>Logging Configuration</Name>
+<NumElts>9</NumElts>
+<Path>
+<Name>Log File Base Path</Name>
+<Val>C:\Users\admin\Documents\TIRM DATA</Val>
+</Path>
+<U32>
+<Name>Max Samples</Name>
+<Val>100000</Val>
+</U32>
+<Refnum>
+<Name>File Refnum</Name>
+<RefKind>Byte Stream File</RefKind>
+<Val>0x00000000</Val>
+</Refnum>
+<Boolean>
+<Name>Log Piezo</Name>
+<Val>1</Val>
+</Boolean>
+<Refnum>
+<Name>Piezo File Refnum</Name>
+<RefKind>Byte Stream File</RefKind>
+<Val>0x00000000</Val>
+</Refnum>
+<Boolean>
+<Name>Log Capacitive</Name>
+<Val>1</Val>
+</Boolean>
+<Refnum>
+<Name>Cap File Refnum</Name>
+<RefKind>Byte Stream File</RefKind>
+<Val>0x00000000</Val>
+</Refnum>
+<String>
+<Name>Filename</Name>
+<Val></Val>
+</String>
+<Path>
+<Name>Path where to save</Name>
+<Val></Val>
+</Path>
+</Cluster>
+<Cluster>
+<Name>Piezo Config</Name>
+<NumElts>3</NumElts>
+<I32>
+<Name>Piezo Serial Number</Name>
+<Val>0</Val>
+</I32>
+<Refnum>
+<Name>MG17Piezo</Name>
+<RefKind>ActiveX</RefKind>
+<ActiveXType>
+<GUID>{6CEFEF2F-E17F-4E3C-BD39-7C3745151800}</GUID>
+<Name>MG17PiezoLib.MG17Piezo</Name>
+</ActiveXType>
+<Val>0x00000000</Val>
+</Refnum>
+<SGL>
+<Name>Setpoint (um)</Name>
+<Val>0.00000</Val>
+</SGL>
+</Cluster>
+<Cluster>
+<Name>Capacitive Config</Name>
+<NumElts>3</NumElts>
+<String>
+<Name>IP Address</Name>
+<Val>USB0</Val>
+</String>
+<U32>
+<Name>Handle</Name>
+<Val>0</Val>
+</U32>
+<DBL>
+<Name>Refresh Time (ms)</Name>
+<Val>100.00000000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>Hardware Config</Name>
+<NumElts>3</NumElts>
+<U16>
+<Name>Data Source</Name>
+<Val>1</Val>
+</U16>
+<Cluster>
+<Name>Counter Configuration</Name>
+<NumElts>3</NumElts>
+<Refnum>
+<Name>DAQmx Task</Name>
+<RefKind>Generic Tag</RefKind>
+<RefType>NIDAQ</RefType>
+<Val>Dev2/ctr0</Val>
+</Refnum>
+<DAQChannel>
+<Name>Counter(s)</Name>
+<Val></Val>
+</DAQChannel>
+<I32>
+<Name>samples per readout</Name>
+<Val>100</Val>
+</I32>
+</Cluster>
+<Cluster>
+<Name>ADC Configuration</Name>
+<NumElts>6</NumElts>
+<Refnum>
+<Name>DAQmx Task</Name>
+<RefKind>Generic Tag</RefKind>
+<RefType>NIDAQ</RefType>
+<Val></Val>
+</Refnum>
+<DAQChannel>
+<Name>Channel(s)</Name>
+<Val>Dev4/ai0,Dev4/ai2,Dev4/ai1,Dev4/ai3</Val>
+</DAQChannel>
+<I32>
+<Name>samples per readout</Name>
+<Val>200</Val>
+</I32>
+<I32>
+<Name>Sample Rate (s/s)</Name>
+<Val>4000</Val>
+</I32>
+<DBL>
+<Name>Max Voltage</Name>
+<Val>10.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Min Voltage</Name>
+<Val>-10.00000000000000</Val>
+</DBL>
+</Cluster>
+</Cluster>
+</Cluster>
+</LVData>

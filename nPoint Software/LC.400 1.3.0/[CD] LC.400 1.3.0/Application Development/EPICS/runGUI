@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd data
+edm -m "P=NPOINT" -x ./nPointTop.edl &
+

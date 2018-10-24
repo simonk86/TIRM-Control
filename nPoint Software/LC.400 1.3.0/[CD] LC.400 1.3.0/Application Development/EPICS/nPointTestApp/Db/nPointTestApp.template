@@ -1,0 +1,567 @@
+record(longin, $(P):CHANNELS_CONN_RAW) {
+  field(DTYP, "stream")
+  field(INP, "@testApp.proto getInteger(0xA0,0x03,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(FLNK,"$(P):CHANNELS_CONNECTED")
+}
+
+record(mbbiDirect,  $(P):CHANNELS_CONNECTED) {
+  field(INP,"$(P):CHANNELS_CONN_RAW")
+  field(SCAN, "Passive")
+  field(FLNK,"$(P):CHANNEL1_CONNECTED")
+}
+
+record(calc,  $(P):CHANNEL1_CONNECTED) {
+  field(INPA,"$(P):CHANNELS_CONNECTED.B0")
+  field(CALC,"!A")
+  field(SCAN, "Passive")
+  field(FLNK,"$(P):CHANNEL2_CONNECTED")
+}
+
+record(calc,  $(P):CHANNEL2_CONNECTED) {
+  field(INPA,"$(P):CHANNELS_CONNECTED.B1")
+  field(CALC,"!A")
+  field(SCAN, "Passive")
+  field(FLNK,"$(P):CHANNEL3_CONNECTED")
+}
+
+record(calc,  $(P):CHANNEL3_CONNECTED) {
+  field(INPA,"$(P):CHANNELS_CONNECTED.B2")
+  field(CALC,"!A")
+  field(SCAN, "Passive")
+}
+
+record(longin, $(P):CH$(CHAN):READ_POSRAW) {
+  field(DTYP, "stream")
+  field(INP, "@testApp.proto getInteger(0x34,0x$(CHAN)3,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+}
+
+record(calc, $(P):CH$(CHAN):GET_POSITION) {
+  field(INPA, "$(P):CH$(CHAN):READ_POSRAW .PP")
+  field(INPB, "$(P):CH$(CHAN):GET_RANGE")
+  field(CALC, "(B/1048574)*A")
+  field(SCAN, ".1 second")
+}
+
+record(calcout, $(P):CH$(CHAN):SET_POSITION) {
+  field(INPB, "$(P):CH$(CHAN):GET_RANGE")
+  field(CALC, "(1048574/B)*A")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(OUT, "$(P):CH$(CHAN):SET_POSRAW.VAL .PP")
+  field(SCAN, "Passive")
+}
+
+record(longin, $(P):CH$(CHAN):GET_RANGE) {
+  field(DTYP, "stream")
+  field(INP, "@testApp.proto getInteger(0x78,0x$(CHAN)0,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(mbbi, $(P):CH$(CHAN):GET_RANGE_TYPE) {
+  field(DTYP, "stream")
+  field(INP, "@testApp.proto getInteger(0x44,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZRST, "microns")
+  field(ONST, "millimeters")
+  field(TWST, "µradians")
+  field(THST, "radians")
+  field(FRST, "nanometers")
+  field(FVST, "milliradians")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(longout, $(P):CH$(CHAN):SET_POSRAW) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x18,0x$(CHAN)2,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+}
+
+record(bo, $(P):CH$(CHAN):SET_SERVO_STATE) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x84,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZNAM, "Disable")
+  field(ONAM, "Enable")
+  field(SCAN, "Passive")
+  field(FLNK, "$(P):CH$(CHAN):GET_SERVO_STATE")
+}
+
+record(bi, $(P):CH$(CHAN):GET_SERVO_STATE) {
+  field(DTYP, "stream")
+  field(INP, "@testApp.proto getInteger(0x84,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZNAM, "Disable")
+  field(ONAM, "Enable")
+  field(SCAN, "Passive")
+  field(PINI,"YES")
+}
+
+record(waveform, $(P):CH$(CHAN):SET_SERVO_PGAIN) {
+  field(DTYP, "LC400ArrayWrite")
+  field(INP, "@LC400 0x1183$(CHAN)720")
+  field(NELM, "1")
+  field(FTVL, "DOUBLE")
+  field(SCAN, "Passive")
+  field(FLNK, "$(P):CH$(CHAN):GET_SERVO_PGAIN")
+}
+
+record(waveform, $(P):CH$(CHAN):SET_SERVO_IGAIN) {
+  field(DTYP, "LC400ArrayWrite")
+  field(INP, "@LC400 0x1183$(CHAN)728")
+  field(NELM, "1")
+  field(FTVL, "DOUBLE")
+  field(SCAN, "Passive")
+  field(FLNK, "$(P):CH$(CHAN):GET_SERVO_IGAIN")
+}
+
+record(waveform, $(P):CH$(CHAN):SET_SERVO_DGAIN) {
+  field(DTYP, "LC400ArrayWrite")
+  field(INP, "@LC400 0x1183$(CHAN)730")
+  field(NELM, "1")
+  field(FTVL, "DOUBLE")
+  field(SCAN, "Passive")
+  field(FLNK, "$(P):CH$(CHAN):GET_SERVO_DGAIN")
+}
+
+record(waveform, $(P):CH$(CHAN):GET_SERVO_PGAIN) {
+  field(DTYP, "LC400ArrayRead")
+  field(INP, "@LC400 0x1183$(CHAN)720")
+  field(NELM, "1")
+  field(FTVL, "DOUBLE")
+  field(SCAN, "Passive")
+  field(PINI,"YES")
+}
+
+record(waveform, $(P):CH$(CHAN):GET_SERVO_IGAIN) {
+  field(DTYP, "LC400ArrayRead")
+  field(INP, "@LC400 0x1183$(CHAN)728")
+  field(NELM, "1")
+  field(FTVL, "DOUBLE")
+  field(SCAN, "Passive")
+  field(PINI,"YES")
+}
+
+record(waveform, $(P):CH$(CHAN):GET_SERVO_DGAIN) {
+  field(DTYP, "LC400ArrayRead")
+  field(INP, "@LC400 0x1183$(CHAN)730")
+  field(NELM, "1")
+  field(FTVL, "DOUBLE")
+  field(SCAN, "Passive")
+  field(PINI,"YES")
+}
+
+record(bo, $(P):CH$(CHAN):SET_WTENABLE) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0xF4,0x$(CHAN)1,0x83,0x11) LC400")
+  field(ZNAM, "Disable")
+  field(ONAM, "Enable")
+  field(SCAN, "Passive")
+  field(FLNK, "$(P):CH$(CHAN):SET_WTINDEX_ZERO")
+}
+
+record(longout, $(P):CH$(CHAN):SET_WTINDEX_ZERO) {
+  field(VAL, "0")
+  field(OUT, "$(P):CH$(CHAN):SET_WTINDEX.VAL")
+  field(FLNK, "$(P):CH$(CHAN):SET_WTINDEX")
+}
+
+
+record(longout, $(P):CH$(CHAN):SET_WTINDEX) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0xF8,0x$(CHAN)1,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+}
+
+record(longout, $(P):CH$(CHAN):SET_WTCDELAY) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x00,0x$(CHAN)2,0x83,0x11) LC400")
+  field(LOPR, "0")
+  field(HOPR, "9999")
+  field(SCAN, "Passive")
+}
+
+record(longout, $(P):CH$(CHAN):SET_ENDWTINDEX) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x04,0x$(CHAN)2,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+}
+
+record(bo, $(P):CH$(CHAN):SET_WTACTIVE) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x08,0x$(CHAN)2,0x83,0x11) LC400")
+  field(ZNAM, "Inactive")
+  field(ONAM, "Active")
+  field(SCAN, "Passive")
+}
+
+record(bi, $(P):CH$(CHAN):GET_WTENABLE) {
+  field(DTYP, "stream")
+  field(INP, "@testApp.proto getInteger(0xF4,0x$(CHAN)1,0x83,0x11) LC400")
+  field(ZNAM, "Disable")
+  field(ONAM, "Enable")
+  field(SCAN, ".5 second")
+}
+
+record(longin, $(P):CH$(CHAN):GET_WTINDEX) {
+  field(DTYP, "stream")
+  field(INP, "@testApp.proto getInteger(0xF8,0x$(CHAN)1,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+}
+
+record(longin, $(P):CH$(CHAN):GET_WTCDELAY) {
+  field(DTYP, "stream")
+  field(INP, "@testApp.proto getInteger(0x00,0x$(CHAN)2,0x83,0x11) LC400")
+  field(SCAN, "1 second")
+}
+
+record(longin, $(P):CH$(CHAN):GET_ENDWTINDEX) {
+  field(DTYP, "stream")
+  field(INP, "@testApp.proto getInteger(0x04,0x$(CHAN)2,0x83,0x11) LC400")
+  field(SCAN, ".5 second")
+}
+
+record(bi, $(P):CH$(CHAN):GET_WTACTIVE) {
+  field(DTYP, "stream")
+  field(INP, "@testApp.proto getInteger(0x08,0x$(CHAN)2,0x83,0x11) LC400")
+  field(ZNAM, "Inactive")
+  field(ONAM, "Active")
+  field(SCAN, "1 second")
+}
+
+record(longout, $(P):CH$(CHAN):SWARR_SIZE) {
+  field(VAL,"$(MAXARRAYSIZE)")
+  field(SCAN, "Passive")
+  field(PINI,"YES")
+}
+
+record(ao, $(P):CH$(CHAN):SWARR_SCALE) {
+  field(VAL,"1.0")
+  field(SCAN, "Passive")
+  field(PINI,"YES")
+}
+
+record(mbbo, $(P):CH$(CHAN):WDATAMETHOD_SEL) {
+  field(ZRST, "Autogenerate")
+  field(ONST, "Read from file")
+  field(VAL, "0")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(mbbo, $(P):CH$(CHAN):WDATAFUNC_SEL) {
+  field(ZRST, "Sinewave")
+  field(ONST, "Triangle")
+  field(VAL, "0")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+
+record(aSub, $(P):CH$(CHAN):CREATE_WAVEDATA) {
+  field(SNAM, "createPeriodicData")
+  field(FTA, "LONG")
+  field(FTB, "LONG")
+  field(FTC, "DOUBLE")
+  field(FTD, "DOUBLE")
+  field(FTE, "DOUBLE")
+  field(INPA, "$(P):CH$(CHAN):SWARR_SIZE")
+  field(INPB, "$(P):CH$(CHAN):WDATAFUNC_SEL")
+  field(INPC, "1.000000")
+  field(INPD, "0.000000")
+  field(INPE, "$(P):CH$(CHAN):GET_RANGE")
+  field(FTVA, "LONG")
+  field(NOVA, "$(MAXARRAYSIZE)")
+  field(OUTA, "$(P):CH$(CHAN):WRITE_WTARRAY")
+  field(FLNK, "$(P):CH$(CHAN):CALC_ENDWTINDEX_CR")
+  field(SCAN, "Passive")
+}
+
+record(calcout, $(P):CH$(CHAN):CALC_ENDWTINDEX_CR) {
+  field(CALC, "A")
+  field(OCAL, "A-1")
+  field(INPA, "$(P):CH$(CHAN):CREATE_WAVEDATA.A")
+  field(OOPT, "When Non-zero")
+  field(DOPT, "Use OCAL")
+  field(OUT, "$(P):CH$(CHAN):SET_ENDWTINDEX_CR.VAL")
+  field(FLNK, "$(P):CH$(CHAN):SET_ENDWTINDEX_CR")
+  field(SCAN, "Passive")
+}
+
+record(longout, $(P):CH$(CHAN):SET_ENDWTINDEX_CR) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x04,0x$(CHAN)2,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+  field(FLNK, "$(P):CH$(CHAN):CALC_TRIGGER_WRARRAY_CR")
+}
+
+record(calcout, $(P):CH$(CHAN):CALC_TRIGGER_WRARRAY_CR) {
+  field(CALC, "A>1")
+  field(INPA, "$(P):CH$(CHAN):CREATE_WAVEDATA.A")
+  field(OOPT, "When Non-zero")
+  field(DOPT, "Use CALC")
+  field(OUT, "$(P):CH$(CHAN):WRITE_WTARRAY.PROC .PP")
+  field(SCAN, "Passive")
+}
+
+record(aSub, $(P):CH$(CHAN):WAVEDATA_READFILE) {
+  field(SNAM, "readWtdataFile")
+  field(FTA, "CHAR")
+  field(NOA, "256")
+  field(FTB, "DOUBLE")
+  field(INPB, "$(P):CH$(CHAN):GET_RANGE")
+  field(FTVA, "LONG")
+  field(NOVA, "$(MAXARRAYSIZE)")
+  field(FTVB, "LONG")
+  field(FTVC, "CHAR")
+  field(NOVC, "256")
+  field(OUTA, "$(P):CH$(CHAN):WRITE_WTARRAY")
+  field(FLNK, "$(P):CH$(CHAN):CALC_ENDWTINDEX_RF")
+  field(SCAN, "Passive")
+}
+
+record(calcout, $(P):CH$(CHAN):CALC_ENDWTINDEX_RF) {
+  field(CALC, "A")
+  field(OCAL, "A-1")
+  field(INPA, "$(P):CH$(CHAN):WAVEDATA_READFILE.VALB")
+  field(OOPT, "When Non-zero")
+  field(DOPT, "Use OCAL")
+  field(OUT, "$(P):CH$(CHAN):SET_ENDWTINDEX_RF.VAL")
+  field(FLNK, "$(P):CH$(CHAN):SET_ENDWTINDEX_RF")
+  field(SCAN, "Passive")
+}
+
+record(longout, $(P):CH$(CHAN):SET_ENDWTINDEX_RF) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x04,0x$(CHAN)2,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+  field(FLNK, "$(P):CH$(CHAN):CALC_TRIGGER_WRARRAY_RF")
+}
+
+record(calcout, $(P):CH$(CHAN):CALC_TRIGGER_WRARRAY_RF) {
+  field(CALC, "A>1")
+  field(INPA, "$(P):CH$(CHAN):WAVEDATA_READFILE.VALB")
+  field(OOPT, "When Non-zero")
+  field(DOPT, "Use CALC")
+  field(OUT, "$(P):CH$(CHAN):WRITE_WTARRAY.PROC .PP")
+  field(SCAN, "Passive")
+}
+
+record(waveform, $(P):CH$(CHAN):WRITE_WTARRAY) {
+  field(DTYP, "LC400ArrayWrite")
+  field(INP, "@LC400 $(WTBA)")
+  field(NELM, "$(MAXARRAYSIZE)")
+  field(FTVL, "LONG")
+  field(SCAN, "Passive")
+}
+
+record(waveform, $(P):CH$(CHAN):READ_WTARRAY) {
+  field(DTYP, "LC400ArrayRead")
+  field(INP, "@LC400 $(WTBA)")
+  field(NELM, "$(MAXARRAYSIZE)")
+  field(FTVL, "LONG")
+  field(SCAN, "Passive")
+}
+
+record(mbbo, $(P):CH$(CHAN):PININ_IOCONF_SEL) {
+  field(ZRST, "Input 1")
+  field(ONST, "Input 2")
+  field(TWST, "Input 3")
+  field(THST, "Input 4")
+  field(VAL, "0")
+  field(SCAN, "Passive")
+}
+
+record(mbbo, $(P):CH$(CHAN):PINOUT_IOCONF_SEL) {
+  field(ZRST, "Output 1")
+  field(ONST, "Output 2")
+  field(TWST, "Output 3")
+  field(THST, "Output 4")
+  field(VAL, "0")
+  field(SCAN, "Passive")
+}
+
+record(mbbo, $(P):CH$(CHAN):TTLINP_PIN1) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x94,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZRST, "None")
+  field(ONST, "EdgeStart")
+  field(TWST, "LevelStart")
+  field(THST, "EdgeStop")
+  field(FRST, "LevelStop")
+  field(FVST, "LevelStartStop")
+  field(SXST, "EdgePauseResume")
+  field(SVST, "LevelPauseResume")
+  field(VAL, "0")
+  field(SCAN, "Passive")
+}
+
+record(mbbo, $(P):CH$(CHAN):TTLINP_PIN2) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x98,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZRST, "None")
+  field(ONST, "EdgeStart")
+  field(TWST, "LevelStart")
+  field(THST, "EdgeStop")
+  field(FRST, "LevelStop")
+  field(FVST, "LevelStartStop")
+  field(SXST, "EdgePauseResume")
+  field(SVST, "LevelPauseResume")
+  field(SCAN, "Passive")
+}
+
+record(mbbo, $(P):CH$(CHAN):TTLINP_PIN3) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x9C,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZRST, "None")
+  field(ONST, "EdgeStart")
+  field(TWST, "LevelStart")
+  field(THST, "EdgeStop")
+  field(FRST, "LevelStop")
+  field(FVST, "LevelStartStop")
+  field(SXST, "EdgePauseResume")
+  field(SVST, "LevelPauseResume")
+  field(SCAN, "Passive")
+}
+
+record(mbbo, $(P):CH$(CHAN):TTLINP_PIN4) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0xA0,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZRST, "None")
+  field(ONST, "EdgeStart")
+  field(TWST, "LevelStart")
+  field(THST, "EdgeStop")
+  field(FRST, "LevelStop")
+  field(FVST, "LevelStartStop")
+  field(SXST, "EdgePauseResume")
+  field(SVST, "LevelPauseResume")
+  field(SCAN, "Passive")
+}
+
+record(mbbo, $(P):CH$(CHAN):TTLOUT_PIN6) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0xF4,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZRST, "None")
+  field(ONST, "ControlLoopErr")
+  field(TWST, "WavefIndexLevel")
+  field(THST, "WavefIndexPulse")
+  field(SCAN, "Passive")
+}
+
+record(mbbo, $(P):CH$(CHAN):TTLOUT_PIN7) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0xF8,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZRST, "None")
+  field(ONST, "ControlLoopErr")
+  field(TWST, "WavefIndexLevel")
+  field(THST, "WavefIndexPulse")
+  field(SCAN, "Passive")
+}
+
+record(mbbo, $(P):CH$(CHAN):TTLOUT_PIN8) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0xFC,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZRST, "None")
+  field(ONST, "ControlLoopErr")
+  field(TWST, "WavefIndexLevel")
+  field(THST, "WavefIndexPulse")
+  field(SCAN, "Passive")
+}
+
+record(mbbo, $(P):CH$(CHAN):TTLOUT_PIN9) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x00,0x$(CHAN)1,0x83,0x11) LC400")
+  field(ZRST, "None")
+  field(ONST, "ControlLoopErr")
+  field(TWST, "WavefIndexLevel")
+  field(THST, "WavefIndexPulse")
+  field(SCAN, "Passive")
+}
+
+record(bo, $(P):CH$(CHAN):TTLINP_PIN1_POLARITY) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0xB4,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZNAM, "RisingActiveHigh")
+  field(ONAM, "FallingActiveLow")
+  field(SCAN, "Passive")
+}
+
+record(bo, $(P):CH$(CHAN):TTLINP_PIN2_POLARITY) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0xB8,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZNAM, "RisingActiveHigh")
+  field(ONAM, "FallingActiveLow")
+  field(SCAN, "Passive")
+}
+
+record(bo, $(P):CH$(CHAN):TTLINP_PIN3_POLARITY) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0xBC,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZNAM, "RisingActiveHigh")
+  field(ONAM, "FallingActiveLow")
+  field(SCAN, "Passive")
+}
+
+record(bo, $(P):CH$(CHAN):TTLINP_PIN4_POLARITY) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0xC0,0x$(CHAN)0,0x83,0x11) LC400")
+  field(ZNAM, "RisingActiveHigh")
+  field(ONAM, "FallingActiveLow")
+  field(SCAN, "Passive")
+}
+
+record(bo, $(P):CH$(CHAN):TTLOUT_PIN6_POLARITY) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x14,0x$(CHAN)1,0x83,0x11) LC400")
+  field(ZNAM, "RisingActiveHigh")
+  field(ONAM, "FallingActiveLow")
+  field(SCAN, "Passive")
+}
+
+record(bo, $(P):CH$(CHAN):TTLOUT_PIN7_POLARITY) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x18,0x$(CHAN)1,0x83,0x11) LC400")
+  field(ZNAM, "RisingActiveHigh")
+  field(ONAM, "FallingActiveLow")
+  field(SCAN, "Passive")
+}
+
+record(bo, $(P):CH$(CHAN):TTLOUT_PIN8_POLARITY) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x1C,0x$(CHAN)1,0x83,0x11) LC400")
+  field(ZNAM, "RisingActiveHigh")
+  field(ONAM, "FallingActiveLow")
+  field(SCAN, "Passive")
+}
+
+record(bo, $(P):CH$(CHAN):TTLOUT_PIN9_POLARITY) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x20,0x$(CHAN)1,0x83,0x11) LC400")
+  field(ZNAM, "RisingActiveHigh")
+  field(ONAM, "FallingActiveLow")
+  field(SCAN, "Passive")
+}
+
+record(longout, $(P):CH$(CHAN):TTLOUT_ERRTOLERANCE) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x54,0x$(CHAN)1,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+}
+
+record(longout, $(P):CH$(CHAN):TTLOUT_WAVEF_INDEXCOUNT) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x58,0x$(CHAN)1,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+}
+
+record(longout, $(P):CH$(CHAN):TTLOUT_LOWINDEX_BOFF) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x5C,0x$(CHAN)1,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+}
+
+record(longout, $(P):CH$(CHAN):TTLOUT_HIGHINDEX_BOFF) {
+  field(DTYP, "stream")
+  field(OUT, "@testApp.proto putInteger(0x9C,0x$(CHAN)1,0x83,0x11) LC400")
+  field(SCAN, "Passive")
+}

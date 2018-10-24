@@ -1,0 +1,12 @@
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\bin\Debug\C400_Example.exe
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\bin\Debug\C400_Example.pdb
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\bin\Debug\C400_Example.xml
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\bin\Debug\FTD2XX_NET.dll
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\bin\Debug\FTD2XX_NET.xml
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\obj\x86\Debug\C400_Example.frmMain.resources
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\obj\x86\Debug\C400_Example.Resources.resources
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\obj\x86\Debug\C400_Example.exe
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\obj\x86\Debug\C400_Example.xml
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\obj\x86\Debug\C400_Example.pdb
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\obj\x86\Debug\C400_Example.vbprojResolveAssemblyReference.cache
+C:\C400 Dev\C400_Example\C400_Example\C400_Example\obj\x86\Debug\C400_Example.vbproj.GenerateResource.Cache

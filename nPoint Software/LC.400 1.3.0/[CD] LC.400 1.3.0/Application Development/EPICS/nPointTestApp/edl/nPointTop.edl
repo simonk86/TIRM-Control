@@ -1,0 +1,350 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 346
+y 358
+w 490
+h 240
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-bold-r-14.0"
+fgColor index 0
+bgColor index 3
+textColor index 0
+ctlFgColor1 index 1
+ctlFgColor2 index 7
+ctlBgColor1 index 19
+ctlBgColor2 index 21
+topShadowColor index 2
+botShadowColor index 0
+endScreenProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 332
+y 116
+w 116
+h 32
+
+beginGroup
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 332
+y 116
+w 116
+h 32
+fgColor index 14
+bgColor index 2
+topShadowColor index 2
+botShadowColor index 0
+font "helvetica-bold-r-14.0"
+buttonLabel "Select Screen"
+numPvs 4
+numDsps 2
+displayFileName {
+  0 "DigitalIO.edl"
+  1 "Wavedata.edl"
+}
+menuLabel {
+  0 "Digital I/O Control"
+  1 "Wavetable Data Control"
+}
+symbols {
+  0 "CHAN=3"
+  1 "CHAN=3"
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(P):CHANNEL3_CONNECTED"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 86
+y 14
+w 323
+h 31
+font "new century schoolbook-bold-r-24.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "nPoint LC.400 Controller"
+}
+autoSize
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 388
+y 166
+w 59
+h 30
+fgColor index 14
+bgColor index 2
+topShadowColor index 2
+botShadowColor index 0
+label "EXIT"
+font "helvetica-bold-r-14.0"
+3d
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 43
+y 76
+w 99
+h 23
+font "new century schoolbook-bold-r-18.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Channel 1"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 190
+y 76
+w 99
+h 23
+font "new century schoolbook-bold-r-18.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Channel 2"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 339
+y 76
+w 99
+h 23
+font "new century schoolbook-bold-r-18.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Channel 3"
+}
+autoSize
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 35
+y 114
+w 116
+h 32
+
+beginGroup
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 35
+y 114
+w 116
+h 32
+fgColor index 14
+bgColor index 2
+topShadowColor index 2
+botShadowColor index 0
+font "helvetica-bold-r-14.0"
+buttonLabel "Select Screen"
+numPvs 4
+numDsps 2
+displayFileName {
+  0 "DigitalIO.edl"
+  1 "Wavedata.edl"
+}
+menuLabel {
+  0 "Digital I/O Control"
+  1 "Wavetable Data Control"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "CHAN=1"
+  1 "CHAN=1"
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(P):CHANNEL1_CONNECTED"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 183
+y 115
+w 116
+h 32
+
+beginGroup
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 183
+y 115
+w 116
+h 32
+fgColor index 14
+bgColor index 2
+topShadowColor index 2
+botShadowColor index 0
+font "helvetica-bold-r-14.0"
+buttonLabel "Select Screen"
+numPvs 4
+numDsps 2
+displayFileName {
+  0 "DigitalIO.edl"
+  1 "Wavedata.edl"
+}
+menuLabel {
+  0 "Digital I/O Control"
+  1 "Wavetable Data Control"
+}
+symbols {
+  0 "CHAN=2"
+  1 "CHAN=2"
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(P):CHANNEL2_CONNECTED"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 345
+y 123
+w 90
+h 18
+font "new century schoolbook-bold-r-14.0"
+fgColor index 21
+bgColor index 19
+useDisplayBg
+visPv "$(P):CHANNEL3_CONNECTED"
+visMin "0"
+visMax "1"
+value {
+  "Unavailable"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 195
+y 120
+w 90
+h 18
+font "new century schoolbook-bold-r-14.0"
+fgColor index 21
+bgColor index 19
+useDisplayBg
+visPv "$(P):CHANNEL2_CONNECTED"
+visMin "0"
+visMax "1"
+value {
+  "Unavailable"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 49
+y 120
+w 90
+h 18
+font "new century schoolbook-bold-r-14.0"
+fgColor index 21
+bgColor index 19
+useDisplayBg
+visPv "$(P):CHANNEL1_CONNECTED"
+visMin "0"
+visMax "1"
+value {
+  "Unavailable"
+}
+autoSize
+endObjectProperties
+

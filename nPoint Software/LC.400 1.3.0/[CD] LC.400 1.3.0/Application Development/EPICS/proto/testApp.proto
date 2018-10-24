@@ -1,0 +1,24 @@
+# Protocol file for the Npoint LC.400 controller
+
+Terminator = 0x55;
+ExtraInput = Ignore;
+
+# Get a 32-bit integer value from the specified address
+# represented by little-endian 4 hex bytes $1 $2 $3 $4
+# Don't use terminator as 0x55 might be in the data
+# so always read in 10 bytes
+getInteger {
+Terminator = "";
+MaxInput = 10;
+
+  out 0xA0 $1 $2 $3 $4 0x55;
+  in  0xA0 $1 $2 $3 $4"%#4r" 0x55;
+}
+
+# Write a 32-bit integer value to the specified 32-bit address
+# represented by little-endian 4 hex bytes $1 $2 $3 $4
+putInteger {
+  out  0xA2 $1 $2 $3 $4"%#4.4r";
+}
+
+

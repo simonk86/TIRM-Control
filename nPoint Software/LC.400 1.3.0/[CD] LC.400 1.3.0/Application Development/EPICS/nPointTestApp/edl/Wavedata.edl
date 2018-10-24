@@ -1,0 +1,884 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 771
+y 311
+w 835
+h 580
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-bold-r-14.0"
+fgColor index 0
+bgColor index 3
+textColor index 0
+ctlFgColor1 index 1
+ctlFgColor2 index 7
+ctlBgColor1 index 19
+ctlBgColor2 index 21
+topShadowColor index 2
+botShadowColor index 0
+endScreenProperties
+
+# (Up/Down Button)
+object activeUpdownButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x -1000286
+y 352
+w 103
+h 32
+fgColor index 14
+bgColor index 0
+topShadowColor index 2
+botShadowColor index 0
+controlPv "$(P):CH$(CHAN):SET_POSITION"
+coarseValue "1.0"
+fineValue "0.1"
+3d
+rate 0.1
+font "helvetica-bold-r-14.0"
+scaleMin -100
+scaleMax 100
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 3250
+y 488
+w 254
+h 35
+
+beginGroup
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 3250
+y 504
+w 123
+h 19
+fgColor index 14
+bgColor index 0
+inconsistentColor index 21
+topShadowColor index 2
+botShadowColor index 0
+controlPv "$(P):CH2_TTLINP_PIN4"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 3295
+y 488
+w 34
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Input 4"
+}
+autoSize
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 3381
+y 504
+w 123
+h 19
+fgColor index 14
+bgColor index 0
+inconsistentColor index 21
+topShadowColor index 2
+botShadowColor index 0
+controlPv "$(P):CH2_TTLINP_PIN4_POLARITY"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+visPv " $(P):PIN_IOCONF_IN_VIS"
+visMin "3"
+visMax "4"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 50
+y 14
+w 777
+h 31
+font "new century schoolbook-bold-r-24.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "nPoint LC.400 Controller: Channel $(CHAN) Wavetable Data"
+}
+autoSize
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 775
+y 504
+w 59
+h 30
+fgColor index 14
+bgColor index 2
+topShadowColor index 2
+botShadowColor index 0
+label "EXIT"
+font "helvetica-bold-r-14.0"
+3d
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 240
+y 65
+w 591
+h 426
+# Appearance
+border
+plotAreaBorder
+graphTitle "Ch$(CHAN) Position Plot"
+xLabel "Time"
+yLabel "Position"
+fgColor index 14
+bgColor index 13
+gridColor index 0
+font "helvetica-medium-r-12.0"
+# Operating Modes
+plotMode "plotLastNPts"
+nPts 100
+# X axis properties
+showXAxis
+xAxisStyle "time"
+xAxisSrc "AutoScale"
+xMax 1
+xShowLabelGrid
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+yShowLabelGrid
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(P):CH$(CHAN):GET_POSITION"
+}
+plotColor {
+  0 index 21
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 69
+y 95
+w 61
+h 24
+fgColor index 14
+onColor index 15
+offColor index 1
+topShadowColor index 2
+botShadowColor index 0
+controlPv "$(P):CH$(CHAN):SET_WTENABLE"
+pressValue "1"
+releaseValue "0"
+onLabel "WT Enable"
+offLabel "WT Disable"
+toggle
+3d
+useEnumNumeric
+font "helvetica-bold-r-10.0"
+visMin "0"
+visMax "0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 69
+y 124
+w 61
+h 24
+fgColor index 14
+onColor index 15
+offColor index 1
+topShadowColor index 2
+botShadowColor index 0
+controlPv "$(P):CH$(CHAN):SET_WTACTIVE"
+pressValue "1"
+releaseValue "0"
+onLabel "WT Active"
+offLabel "WT Inactive"
+toggle
+3d
+useEnumNumeric
+font "helvetica-bold-r-10.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 106
+y 167
+w 95
+h 16
+fgColor index 14
+bgColor index 0
+inconsistentColor index 21
+topShadowColor index 2
+botShadowColor index 0
+controlPv "$(P):CH$(CHAN):WDATAMETHOD_SEL"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 26
+y 167
+w 74
+h 14
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Data Source"
+}
+autoSize
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 137
+y 100
+w 12
+h 12
+lineColor index 14
+fill
+fillColor index 15
+visPv "$(P):CH$(CHAN):GET_WTENABLE"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 137
+y 100
+w 12
+h 12
+lineColor index 14
+fill
+fillColor index 1
+visPv "$(P):CH$(CHAN):GET_WTENABLE"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 137
+y 132
+w 12
+h 12
+lineColor index 14
+fill
+fillColor index 15
+visPv "$(P):CH$(CHAN):GET_WTACTIVE"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 137
+y 132
+w 12
+h 12
+lineColor index 14
+fill
+fillColor index 1
+visPv "$(P):CH$(CHAN):GET_WTACTIVE"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 50
+y 208
+w 163
+h 160
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 6
+release 0
+x 117
+y 313
+w 36
+h 18
+controlPv "$(P):CH$(CHAN):SET_WTCDELAY"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+editable
+autoHeight
+motifWidget
+precision 0
+fieldLen "3"
+nullColor index 7
+fastUpdate
+useAlarmBorder
+newPos
+inputFocusUpdates
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 50
+y 316
+w 59
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Cycle Delay"
+}
+autoSize
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 6
+release 0
+x 135
+y 236
+w 57
+h 18
+controlPv "$(P):CH$(CHAN):CREATE_WAVEDATA.C"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+editable
+autoHeight
+motifWidget
+precision 4
+fieldLen "7"
+nullColor index 7
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 6
+release 0
+x 135
+y 258
+w 57
+h 18
+controlPv "$(P):CH$(CHAN):CREATE_WAVEDATA.D"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+editable
+autoHeight
+motifWidget
+precision 4
+fieldLen "7"
+nullColor index 7
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 68
+y 242
+w 61
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Scale Factor"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 93
+y 264
+w 32
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Offset"
+}
+autoSize
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 104
+y 344
+w 91
+h 24
+fgColor index 14
+onColor index 21
+offColor index 1
+topShadowColor index 2
+botShadowColor index 0
+controlPv "$(P):CH$(CHAN):CREATE_WAVEDATA.PROC"
+pressValue "1"
+onLabel "WT Data Create"
+offLabel "WT Data Create"
+3d
+useEnumNumeric
+font "helvetica-bold-r-10.0"
+visMin "0"
+visMax "0"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 6
+release 0
+x 137
+y 286
+w 55
+h 14
+controlPv "$(P):CH$(CHAN):CREATE_WAVEDATA.A"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 80
+fgAlarm
+bgColor index 53
+autoHeight
+precision 0
+fieldLen "5"
+nullColor index 7
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 55
+y 288
+w 77
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Array Elements"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 67
+y 214
+w 42
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Function"
+}
+autoSize
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 117
+y 208
+w 75
+h 18
+fgColor index 14
+bgColor index 0
+inconsistentColor index 21
+topShadowColor index 2
+botShadowColor index 0
+controlPv "$(P):CH$(CHAN):WDATAFUNC_SEL"
+indicatorPv "$(P):CH$(CHAN):WDATAFUNC_SEL"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 6
+release 0
+x 158
+y 316
+w 55
+h 14
+controlPv "$(P):CH$(CHAN):GET_WTCDELAY"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 80
+fgAlarm
+bgColor index 53
+autoHeight
+precision 0
+fieldLen "4"
+nullColor index 7
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+visPv "$(P):CH$(CHAN):WDATAMETHOD_SEL"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 216
+w 230
+h 126
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 6
+release 0
+x 118
+y 285
+w 37
+h 18
+controlPv "$(P):CH$(CHAN):SET_WTCDELAY"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+editable
+autoHeight
+motifWidget
+precision 0
+fieldLen "3"
+nullColor index 7
+fastUpdate
+useAlarmBorder
+newPos
+inputFocusUpdates
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 53
+y 289
+w 59
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Cycle Delay"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 6
+release 0
+x 160
+y 288
+w 55
+h 14
+controlPv "$(P):CH$(CHAN):GET_WTCDELAY"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 80
+fgAlarm
+bgColor index 53
+autoHeight
+precision 0
+fieldLen "4"
+nullColor index 7
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 6
+release 0
+x 4
+y 233
+w 230
+h 12
+controlPv "$(P):CH$(CHAN):WAVEDATA_READFILE.A"
+font "helvetica-medium-r-10.0"
+fgColor index 14
+fgAlarm
+bgColor index 0
+editable
+autoHeight
+limitsFromDb
+nullColor index 7
+useKp
+file
+useHexPrefix
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 13
+y 263
+w 103
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "No. Data Points read"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 6
+release 0
+x 125
+y 262
+w 55
+h 14
+controlPv "$(P):CH$(CHAN):WAVEDATA_READFILE.VALB"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 80
+fgAlarm
+bgColor index 53
+autoHeight
+precision 0
+fieldLen "5"
+nullColor index 7
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 31
+y 216
+w 163
+h 14
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 19
+useDisplayBg
+value {
+  "Select Wavetable Data File "
+}
+autoSize
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 89
+y 318
+w 109
+h 24
+fgColor index 14
+onColor index 21
+offColor index 1
+topShadowColor index 2
+botShadowColor index 0
+controlPv "$(P):CH$(CHAN):WAVEDATA_READFILE.PROC"
+pressValue "1"
+onLabel "WT Data File Read"
+offLabel "WT Data File Read"
+3d
+useEnumNumeric
+font "helvetica-bold-r-10.0"
+visMin "0"
+visMax "0"
+endObjectProperties
+
+endGroup
+
+visPv "$(P):CH$(CHAN):WDATAMETHOD_SEL"
+visMin "1"
+visMax "2"
+endObjectProperties
+
